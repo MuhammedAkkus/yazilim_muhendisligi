@@ -1,10 +1,8 @@
--- Sýnýflar tablosu
 CREATE TABLE Siniflar (
     SinifID INT PRIMARY KEY,
     SinifAdi VARCHAR(50)
 );
 
--- Öðrenciler tablosu
 CREATE TABLE Ogrenciler (
     OgrenciID INT PRIMARY KEY,
     Ad VARCHAR(50),
@@ -15,7 +13,6 @@ CREATE TABLE Ogrenciler (
     FOREIGN KEY (SinifID) REFERENCES Siniflar(SinifID)
 );
 
--- Öðretmenler tablosu
 CREATE TABLE Ogretmenler (
     OgretmenID INT PRIMARY KEY,
     Ad VARCHAR(50),
@@ -25,7 +22,6 @@ CREATE TABLE Ogretmenler (
     Bolum VARCHAR(50)
 );
 
--- Dersler tablosu
 CREATE TABLE Dersler (
     DersID INT PRIMARY KEY,
     DersAdi VARCHAR(100),
@@ -33,7 +29,6 @@ CREATE TABLE Dersler (
     FOREIGN KEY (OgretmenID) REFERENCES Ogretmenler(OgretmenID)
 );
 
--- Ders Programý tablosu
 CREATE TABLE DersProgrami (
     DersProgramiID INT PRIMARY KEY,
     SinifID INT,
@@ -44,7 +39,6 @@ CREATE TABLE DersProgrami (
     FOREIGN KEY (DersID) REFERENCES Dersler(DersID)
 );
 
--- Veliler tablosu
 CREATE TABLE Veliler (
     VeliID INT PRIMARY KEY,
     Ad VARCHAR(50),
